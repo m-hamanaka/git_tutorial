@@ -1,9 +1,49 @@
+# gitコマンド
+
+※ git のエイリアス設定している想定で、コマンド一部省略。
+
+```
+#ブランチ確認
+git br
+
+#ステータス確認
+git st
+
+#masterブランチ最新に更新
+git pull origin master
+git pull origin main
+
+#新しくブランチきる
+git co -b <ブランチ名>
+
+#変更をステージに
+git add .
+
+#コミット
+git ci -m "<メッセージ>"
+
+#GitHubプッシュ、　※その後プルリク→コードレビュー→マージ
+git push origin <ブランチ名>
+
+↓
+
+#マスター移動
+git co master
+
+#masterブランチ最新に更新
+git pull origin master
+
+#ブランチ削除
+git br -d <ブランチ名>
+```
+---
+
 # [基礎]gitコマンドの復習
 
 ## ローカルリポジトリ作成
 
 ```
-#gitディレクトリが作成される、(隠しフォルダなので、ls -a)
+gitディレクトリが作成される、(隠しフォルダなので、ls -a)
 git init
 ```
 
@@ -18,7 +58,7 @@ git clone <リポジトリ名>
 ```
 #全部
 git add .
- 
+
 git add <ファイル名>
 git add <ディレクトリ名>
 ```
@@ -28,7 +68,7 @@ git add <ディレクトリ名>
 ```
 ＃一行で簡潔にかく
 git commit -m "<メッセージ>"
- 
+
 #vimエディタ立ち上げ、二行目に理由書く ※vimエディターiで書いて、esc→:wqで終わり
 git commit -v
 ```
@@ -47,7 +87,7 @@ git status
 # add前の変更分
 git diff
 git diff <ファイル名>
- 
+
 #add後の変更分
 git diff --staged
 ```
@@ -58,10 +98,10 @@ git diff --staged
 ```
 # 一行で表示
 git log --oneline
- 
+
 #変更差分を表示
 git log -p <ファイル名>
- 
+
 #コミット数を制限して表示
 git log -n <コミット数>
 ```
@@ -74,7 +114,7 @@ git push <リモート名>　<ブランチ名>
 #masterブランチに
 git push origin master
 git push origin main
- 
+
 #origin(GitHub)というショートカットでURLリポジトリ登録する
 #※originは、リモートリポジトリのデフォルトで付けられた名前のこと。ネット上のリポジトリを置くサーバーの登録がこのコマンド。
 git remote add origin <url>
@@ -86,7 +126,7 @@ git remote add origin <url>
 #ワークツリーの変更を消したい
 git checkout -- <ファイル名>
 git checkout -- <ディレクトリ名>
- 
+
 #全変更を消したい
 git checkout -- .
 ```
@@ -97,10 +137,10 @@ git checkout -- .
 #ワークツリーには、残るよ
 git reset HEAD <ファイル名>
 git reset HEAD <ディレクトリ名>
- 
+
 #ステージあるの全部消す
 git reset HEAD .
- 
+
 #「HEAD」は、ブランチの先頭を表す名前。デフォルトはローカルリポジトリのmasterの先頭をさす。
 ```
 
@@ -116,7 +156,7 @@ git commit --amend -m "<メッセージ>"
 ```
 #名前のみ表示
 git remote
- 
+
 #対応するURLを表示
 git remote　-v
 ```
@@ -167,7 +207,7 @@ git checkout -b <ブランチ名>
 4. ブランチの一覧表示
 ```
 git branch
- 
+
 #リモートも全て表示
 git branch -a
 ```
@@ -180,4 +220,3 @@ git branch -m <ブランチ名>
 #masterにmergeしていない変更があるときは、削除しないよ　※強制削除は -D
 git branch -d <ブランチ名>
 ```
-
