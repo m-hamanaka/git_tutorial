@@ -35,6 +35,22 @@ git pull origin master
 
 #ブランチ削除
 git br -d <ブランチ名>
+
+#日時やコメントなどのログを確認
+git log --all --graph
+
+#リモートレポジトリをクローン
+git clone クローンするURL
+
+#リモートから変更内容をダウンロード
+git fetch origin
+
+#リモートの変更内容を取り込む
+git merge origin/<ブランチ名>
+
+#リモートからマージまで一気に取得
+git pull
+
 ```
 ---
 
@@ -104,6 +120,9 @@ git log -p <ファイル名>
 
 #コミット数を制限して表示
 git log -n <コミット数>
+
+#日時やコメントなどのログを確認
+git log --all --graph
 ```
 
 
